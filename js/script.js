@@ -1,4 +1,12 @@
 let isConvertToFahrenheit = true;
+const introductionCelciusToFahrenheit =
+                `Masukkan suhu derajat Celcius (&deg;C) ke kotak dibawah,
+                lalu klik tombol Konversi untuk mendapatkan hasil konversi
+                dalam bentuk Fahrenheit (&deg;F)`;
+const introductionFahrenheitToCelcius =
+                `Masukkan suhu derajat Fahrenheit (&deg;F) ke kotak dibawah,
+                lalu klik tombol Konversi untuk mendapatkan hasil konversi
+                dalam bentuk Celcius (&deg;C)`;
 const penjelasanCelciusToFahrenheit = 
                     `<p>Suhu <span class="remark"><i>S</i></span> dalam derajat Fahrenheit (&deg;F) sama dengan suhu <span class="remark"><i>S</i></span> dalam derajat Celsius (&deg;C) kali <span class="remark">9/5</span> tambah <span class="remark">32</span></p>
                     
@@ -56,11 +64,13 @@ function reverseSuhu() {
     isConvertToFahrenheit = !isConvertToFahrenheit;
     resetSuhu();
     if (isConvertToFahrenheit) {
+        document.getElementById('introduction').innerHTML = introductionCelciusToFahrenheit;
         document.querySelector('label[for="main-input"]').innerHTML = "Celcius (&deg;C):";
         document.querySelector('label[for="main-result"]').innerHTML = "Fahrenheit (&deg;F):";
         document.getElementById('judul-penjelasan-konversi').innerHTML = "Cara Konversi Dari Celsius (&deg;C) ke Fahrenheit (&deg;F)";
         document.getElementById('penjelasan-konversi').innerHTML = penjelasanCelciusToFahrenheit;
     } else {
+        document.getElementById('introduction').innerHTML = introductionFahrenheitToCelcius;
         document.querySelector('label[for="main-input"]').innerHTML = "Fahrenheit (&deg;F):";
         document.querySelector('label[for="main-result"]').innerHTML = "Celcius (&deg;C):";
         document.getElementById('judul-penjelasan-konversi').innerHTML = "Cara Konversi Dari Fahrenheit (&deg;F) ke Celsius (&deg;C)";;
